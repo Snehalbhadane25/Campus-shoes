@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><span>ShoeStore</span></a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="collection.html" class="nav-link">Collection</a>
+            </li>
+            <li class="nav-item">
+              <a href="wishlist.html" class="nav-link active">Wishlist</a>
+            </li>
+            <li class="nav-item">
+              <a href="cart.html" class="nav-link">Cart</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Your Wishlist ❤️</h2>
+      <div id="wishlist-container" class="table-responsive"></div>
+      <div class="text-center mt-4">
+        <a href="collection.html" class="btn-return">← Back to Collection</a>
+      </div>
+    </div>
+
+    <footer class="py-3 text-center">
+      <p>© 2025 ShoeStore. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      const wishlistContainer = document.getElementById("wishlist-container");
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+      function renderWishlist() {
+        if (wishlist.length === 0) {
+          wishlistContainer.innerHTML =
+            "<p class='text-center'>Your wishlist is empty 💔</p>";
+          return;
+        }
+
+        wishlistContainer.innerHTML = `
+        <table class="table align-middle table-bordered text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>Image</th>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${wishlist
+              .map(
+                (item, i) => `
+              <tr>
+                <td><img src="${item.image}" alt="${item.name}" /></td>
+                <td>${item.name}</td>
+                <td>₹${item.price}</td>
+                <td>
+                  <button class="btn-remove" onclick="removeFromWishlist(${i})">Remove</button>
+                  <button class="btn-dark" onclick="addToCart(${i})">Add to Cart</button>
+                </td>
+              </tr>
+            `
+              )
+              .join("")}
+          </tbody>
+        </table>
+      `;
+      }
+
+      function removeFromWishlist(index) {
+        wishlist.splice(index, 1);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        renderWishlist();
+      }
+
+      function addToCart(index) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(wishlist[index]);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Added to cart 🛒");
+      }
+
+      renderWishlist();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

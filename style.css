@@ -1,0 +1,342 @@
+/* ==============================
+   Global Styles
+============================== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-shop,
+.btn-dark {
+  background-color: #000;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 25px;
+  transition: 0.3s ease;
+}
+
+.btn-shop:hover,
+.btn-dark:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* ==============================
+   Navbar
+============================== */
+.navbar {
+  background-color: #000 !important;
+}
+
+.navbar-brand span {
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffc107 !important;
+}
+
+.navbar .bi {
+  transition: 0.3s ease;
+}
+
+.navbar .bi:hover {
+  color: #ffc107;
+}
+
+/* Wishlist & Cart badges */
+#wishlist-count,
+#cart-count {
+  font-size: 10px;
+  padding: 4px 5px;
+}
+
+/* ==============================
+   Hero Carousel
+============================== */
+.hero-img {
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 120px;
+  left: 70px;
+  text-align: left;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.carousel-caption h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   Best Sellers / Product Cards
+============================== */
+.product-card {
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  border-radius: 10px 10px 0 0;
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-card .card-body {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 0 0 10px 10px;
+}
+
+.product-card h5 {
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.product-card p {
+  color: #555;
+}
+
+/* Best Sellers Title */
+section h2 {
+  position: relative;
+  display: inline-block;
+  color: #000;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: #ffc107;
+}
+
+/* ==============================
+   Buttons
+============================== */
+.btn-return {
+  background-color: #000;
+  color: #fff;
+  border-radius: 25px;
+  padding: 8px 20px;
+  transition: 0.3s ease;
+}
+
+.btn-return:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ==============================
+   Product Details Page
+============================== */
+.product-details {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.product-details img {
+  width: 100%;
+  border-radius: 10px;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* ==============================
+   Wishlist & Cart Pages
+============================== */
+.table img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.btn-remove {
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 15px;
+  transition: 0.3s;
+}
+
+.btn-remove:hover {
+  background-color: #bb2d3b;
+}
+
+/* ==============================
+   Customer Reviews
+============================== */
+.card.p-3.text-center {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background: #fff;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.card.p-3.text-center:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card.p-3.text-center img {
+  border: 3px solid #ffc107;
+  transition: 0.3s ease;
+}
+
+.card.p-3.text-center:hover img {
+  transform: scale(1.1);
+}
+
+/* ==============================
+   GRAZIA Awards Section
+============================== */
+section.bg-light.text-center {
+  position: relative;
+  overflow: hidden;
+}
+
+section.bg-light.text-center img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.bg-light.text-center img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+section.bg-light.text-center h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section.bg-light.text-center p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Animation for awards appearance */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+section.bg-light.text-center img {
+  animation: fadeInScale 1s ease-in-out;
+}
+
+/* ==============================
+   Responsive Design
+============================== */
+@media (max-width: 768px) {
+  .carousel-caption {
+    bottom: 60px;
+    left: 20px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .product-card img {
+    height: 240px;
+  }
+
+  section.bg-light.text-center img {
+    width: 90px;
+  }
+
+  .card.p-3.text-center {
+    padding: 20px;
+  }
+}
